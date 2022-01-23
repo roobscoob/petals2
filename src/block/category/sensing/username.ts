@@ -1,6 +1,6 @@
-import { Block } from "../..";
+import { BlockKind } from "../../kinds";
 
-export class Username extends Block {
+export class Username extends BlockKind.Reporter {
   constructor() {
     super("sensing_username");
   }

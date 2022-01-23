@@ -1,8 +1,8 @@
-import { Block } from "../..";
 import { Input } from "../../input";
 import { NumberInput } from "../../input/number";
+import { BlockKind } from "../../kinds";
 
-export class ChangeYBy extends Block {
+export class ChangeYBy extends BlockKind.Stack {
   constructor(dY: number | Input = 10) {
     super("motion_changeyby");
 

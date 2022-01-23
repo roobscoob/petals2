@@ -1,8 +1,8 @@
-import { Block } from "../..";
 import { Input } from "../../input";
 import { StringInput } from "../../input/string";
+import { BlockKind } from "../../kinds";
 
-export class Contains extends Block {
+export class Contains extends BlockKind.Boolean {
   constructor(string1: string | Input = "apple ", string2: string | Input = "banana") {
     super("operator_contains");
 

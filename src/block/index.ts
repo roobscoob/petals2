@@ -1,6 +1,8 @@
-import { Input, SerializedInput } from "./input";
+import { AnyInput, Input, SerializedInput } from "./input";
 import { ID } from "../id";
 import { Field, SerializedField } from "./field";
+import { Optimizer } from "../optimizer";
+import { BlockStore } from "./store";
 
 export type SerializedBlock = {
   opcode: string,
@@ -69,6 +71,10 @@ export abstract class Block {
     return top;
   }
 
+  isHead() {
+    return !this.hasParent();
+  }
+
   getTail(): Block {
     let top: Block = this;
 
@@ -113,5 +119,16 @@ export abstract class Block {
       shadow: this.shadow,
       topLevel: this.parent === undefined,
     }
+  }
+
+  isYieldPoint() {
+    return false;
+  }
+
+  optimize(store: BlockStore, optimizer: Optimizer): Block|AnyInput {
+    if (this.hasNext()) {
+      this.next().optimize(store, optimizer);
+    }
+    return this;
   }
 }

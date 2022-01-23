@@ -1,8 +1,8 @@
-import { Block } from "../..";
 import { Sprite } from "../../../target/sprite";
 import { ValueField } from "../../field/value";
+import { BlockKind } from "../../kinds";
 
-export class GlideToMenu extends Block {
+export class GlideToMenu extends BlockKind.Reporter {
   constructor(to: Sprite | string = "_random_") {
     super("motion_glideto_menu");
 

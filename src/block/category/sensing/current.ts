@@ -1,5 +1,5 @@
-import { Block } from "../..";
 import { ValueField } from "../../field/value";
+import { BlockKind } from "../../kinds";
 
 export enum CurrentOption {
   Year = "year",
@@ -11,7 +11,7 @@ export enum CurrentOption {
   Second = "second",
 }
 
-export class Current extends Block {
+export class Current extends BlockKind.Reporter {
   constructor(current: CurrentOption = CurrentOption.Year) {
     super("sensing_current");
 

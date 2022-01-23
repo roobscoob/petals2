@@ -1,6 +1,6 @@
-import { Block } from "../..";
+import { BlockKind } from "../../kinds";
 
-export class Timer extends Block {
+export class Timer extends BlockKind.Reporter {
   constructor() {
     super("sensing_timer");
   }

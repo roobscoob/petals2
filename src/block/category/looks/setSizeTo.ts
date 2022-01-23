@@ -1,8 +1,8 @@
 import { NumberInput } from "../../input/number";
 import { Input } from "../../input";
-import { Block } from "../..";
+import { BlockKind } from "../../kinds";
 
-export class SetSizeTo extends Block {
+export class SetSizeTo extends BlockKind.Stack {
   constructor(size: Input | number = 100) {
     super("looks_setsizeto");
 

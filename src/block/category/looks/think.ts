@@ -1,8 +1,8 @@
 import { StringInput } from "../../input/string";
 import { Input } from "../../input";
-import { Block } from "../..";
+import { BlockKind } from "../../kinds";
 
-export class Think extends Block {
+export class Think extends BlockKind.Stack {
   constructor(message: Input | string = "Hmm...") {
     super("looks_think");
 

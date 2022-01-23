@@ -1,4 +1,6 @@
 import { Block } from "..";
+import { Optimizer } from "../../optimizer";
+import { BlockStore } from "../store";
 import { AngleInput } from "./angle";
 import { BroadcastInput } from "./broadcast";
 import { ColorInput } from "./color";
@@ -10,21 +12,27 @@ import { PositiveNumberInput } from "./positiveNumber";
 import { StringInput } from "./string";
 import { VariableInput } from "./variable";
 
-type AnyInput = Block | NumberInput | PositiveNumberInput | PositiveIntegerInput | IntegerInput | AngleInput | ColorInput | StringInput | BroadcastInput | VariableInput | ListInput;
+export type AnyInput = Block | NumberInput | PositiveNumberInput | PositiveIntegerInput | IntegerInput | AngleInput | ColorInput | StringInput | BroadcastInput | VariableInput | ListInput;
 type SerializedAnyInput = string | ReturnType<Exclude<AnyInput, Block>["serialize"]>;
 export type SerializedInput = [number, SerializedAnyInput] | [number, SerializedAnyInput, SerializedAnyInput];
 
+export enum InputKind {
+  Shadowed = 1,
+  Unshadowed,
+  Obscured
+}
+
 export class Input {
   static shadowed(value: AnyInput): Input {
-    return new Input(1, value);
+    return new Input(InputKind.Shadowed, value);
   }
 
   static unshadowed(value: AnyInput): Input {
-    return new Input(2, value);
+    return new Input(InputKind.Unshadowed, value);
   }
 
   static obscured(value: AnyInput, obscured: AnyInput): Input {
-    return new Input(3, value, obscured);
+    return new Input(InputKind.Obscured, value, obscured);
   }
 
   private constructor(protected readonly kind: number, protected topLayer: AnyInput, protected bottomLayer?: AnyInput) {}
@@ -49,5 +57,20 @@ export class Input {
       "getId" in this.topLayer ? this.topLayer.getId() : this.topLayer.serialize(),
       "getId" in this.bottomLayer ? this.bottomLayer.getId() : this.bottomLayer.serialize()
     ];
+  }
+
+  optimize(store: BlockStore, optimizer: Optimizer) {
+    const topLayer = this.getTopLayer();
+    const bottomLayer = this.getBottomLayer();
+
+    if (topLayer instanceof Block) {
+      this.setTopLayer(topLayer.optimize(store, optimizer));
+    }
+    
+    if (bottomLayer instanceof Block) {
+      this.setBottomLayer(bottomLayer.optimize(store, optimizer));
+    }
+
+    return this;
   }
 }

@@ -1,8 +1,8 @@
-import { NumberInput } from "../../input/number";
 import { Input } from "../../input";
 import { Block } from "../..";
+import { BlockKind } from "../../kinds";
 
-export class RepeatUntil extends Block {
+export class RepeatUntil extends BlockKind.C {
   constructor(condition?: Block, substack?: Block) {
     super("control_repeat_until");
 

@@ -1,10 +1,10 @@
-import { Block } from "../..";
 import { List } from "../../../list";
 import { ListField } from "../../field/list";
 import { Input } from "../../input";
 import { StringInput } from "../../input/string";
+import { BlockKind } from "../../kinds";
 
-export class ListContainsItem extends Block {
+export class ListContainsItem extends BlockKind.Boolean {
   constructor(list: List, item: string | Input) {
     super("data_listcontainsitem");
 

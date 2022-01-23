@@ -1,10 +1,8 @@
-import { Block } from "../..";
-import { ValueField } from "../../field/value";
 import { Input } from "../../input";
 import { ColorInput } from "../../input/color";
-import { NumberInput } from "../../input/number";
+import { BlockKind } from "../../kinds";
 
-export class TouchingColor extends Block {
+export class TouchingColor extends BlockKind.Boolean {
   constructor(color1: ColorInput | Input) {
     super("sensing_touchingcolor");
 

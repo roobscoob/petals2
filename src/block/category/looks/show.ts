@@ -1,6 +1,6 @@
-import { Block } from "../..";
+import { BlockKind } from "../../kinds";
 
-export class Show extends Block {
+export class Show extends BlockKind.Stack {
   constructor() {
     super("looks_show");
   }

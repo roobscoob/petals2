@@ -1,9 +1,8 @@
-import { Block } from "../..";
 import { Input } from "../../input";
-import { NumberInput } from "../../input/number";
 import { StringInput } from "../../input/string";
+import { BlockKind } from "../../kinds";
 
-export class Length extends Block {
+export class Length extends BlockKind.Reporter {
   constructor(string: string | Input = "apple") {
     super("operator_length");
 

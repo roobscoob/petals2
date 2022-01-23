@@ -1,8 +1,8 @@
 import { NumberInput } from "../../input/number";
 import { Input } from "../../input";
-import { Block } from "../..";
+import { BlockKind } from "../../kinds";
 
-export class GlideTo extends Block {
+export class GlideTo extends BlockKind.Stack {
   constructor(secs: number | Input = 1, to: Input) {
     super("motion_glideto");
 

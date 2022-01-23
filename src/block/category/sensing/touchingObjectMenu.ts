@@ -1,8 +1,8 @@
-import { Block } from "../..";
 import { Sprite } from "../../../target/sprite";
 import { ValueField } from "../../field/value";
+import { BlockKind } from "../../kinds";
 
-export class TouchingObjectMenu extends Block {
+export class TouchingObjectMenu extends BlockKind.Reporter {
   constructor(object: Sprite | string = "_mouse_") {
     super("sensing_touchingobjectmenu");
 

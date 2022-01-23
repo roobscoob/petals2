@@ -1,6 +1,6 @@
-import { Block } from "../..";
+import { BlockKind } from "../../kinds";
 
-export class Volume extends Block {
+export class Volume extends BlockKind.Reporter {
   constructor() {
     super("sound_volume");
   }

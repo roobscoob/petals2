@@ -1,7 +1,8 @@
 import { Block } from "../..";
 import { Input } from "../../input";
+import { BlockKind } from "../../kinds";
 
-export class Or extends Block {
+export class Or extends BlockKind.Boolean {
   constructor(operand1?: Block, operand2?: Block) {
     super("operator_or");
 

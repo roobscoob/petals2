@@ -1,8 +1,10 @@
-import { Block } from "../..";
+import { Optimizer } from "../../../optimizer";
 import { Input } from "../../input";
 import { NumberInput } from "../../input/number";
+import { BlockKind } from "../../kinds";
+import { BlockStore } from "../../store";
 
-export class Add extends Block {
+export class Add extends BlockKind.Reporter {
   constructor(num1: number | Input = 0, num2: number | Input = 0) {
     super("operator_add");
 
@@ -42,5 +44,19 @@ export class Add extends Block {
 
   getNum2(): Input {
     return this.getInput("NUM2")!;
+  }
+
+  optimize(store: BlockStore, optimizer: Optimizer) {
+    this.setNum1(this.getNum1().optimize(store, optimizer));
+    this.setNum2(this.getNum2().optimize(store, optimizer));
+
+    const num1 = this.getNum1().getTopLayer();
+    const num2 = this.getNum2().getTopLayer();
+    if (num1 instanceof NumberInput && num2 instanceof NumberInput) {
+      return new NumberInput(num1.getValue() + num2.getValue());
+    }
+
+    super.optimize(store, optimizer);
+    return this;
   }
 }

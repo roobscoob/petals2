@@ -1,8 +1,11 @@
-import { NumberInput } from "../../input/number";
 import { Input } from "../../input";
 import { Block } from "../..";
+import { BlockKind } from "../../kinds";
+import { Optimizer } from "../../../optimizer";
+import { BlockStore } from "../../store";
+import { And } from "../operators/and";
 
-export class If extends Block {
+export class If extends BlockKind.C {
   constructor(condition?: Block, substack?: Block) {
     super("control_if");
 
@@ -48,5 +51,28 @@ export class If extends Block {
 
       return topLayer;
     }
+  }
+
+  optimize(store: BlockStore, optimizer: Optimizer) {
+    const condition = this.getCondition();
+    const optimizedCondition = condition?.optimize(store, optimizer);
+
+    if (optimizedCondition) {
+      if (optimizedCondition instanceof And && optimizedCondition.getOperand1() === undefined && optimizedCondition.getOperand2() === undefined) {
+        store.removeBlock(this);
+        super.optimize(store, optimizer);
+        return this;
+      }
+    }
+
+    const block = this.getSubstack();
+    const optimizedBlock = block?.optimize(store, optimizer);
+
+    if (optimizedBlock && optimizedBlock !== this.getSubstack()) {
+      this.setInput("SUBSTACK", Input.unshadowed(optimizedBlock));
+    }
+
+    super.optimize(store, optimizer);
+    return this;
   }
 }

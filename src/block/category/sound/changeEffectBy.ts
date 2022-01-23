@@ -1,14 +1,14 @@
-import { Block } from "../..";
 import { ValueField } from "../../field/value";
 import { Input } from "../../input";
 import { NumberInput } from "../../input/number";
+import { BlockKind } from "../../kinds";
 
 export enum Effect {
   Pitch = "PITCH",
   Pan = "PAN",
 }
 
-export class ChangeEffectBy extends Block {
+export class ChangeEffectBy extends BlockKind.Stack {
   constructor(effect: Effect = Effect.Pitch, value: Input | number = 10) {
     super("sound_changeeffectby");
 

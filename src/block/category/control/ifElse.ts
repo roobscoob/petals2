@@ -1,8 +1,8 @@
-import { NumberInput } from "../../input/number";
 import { Input } from "../../input";
 import { Block } from "../..";
+import { BlockKind } from "../../kinds";
 
-export class IfElse extends Block {
+export class IfElse extends BlockKind.E {
   constructor(condition?: Block, substackTrue?: Block, substackFalse?: Block) {
     super("control_if_else");
 

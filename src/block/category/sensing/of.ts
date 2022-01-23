@@ -1,7 +1,6 @@
-import { Block } from "../..";
 import { ValueField } from "../../field/value";
 import { Input } from "../../input";
-import { NumberInput } from "../../input/number";
+import { BlockKind } from "../../kinds";
 
 export enum SensingProperty {
   BackdropNumber = "backdrop #",
@@ -9,7 +8,7 @@ export enum SensingProperty {
   Volume = "volume",
 }
 
-export class Of extends Block {
+export class Of extends BlockKind.Reporter {
   constructor(property: SensingProperty = SensingProperty.BackdropNumber, object: Input) {
     super("sensing_of");
 

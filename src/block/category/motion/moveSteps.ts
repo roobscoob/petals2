@@ -1,8 +1,8 @@
-import { Block } from "../..";
 import { Input } from "../../input";
 import { NumberInput } from "../../input/number";
+import { BlockKind } from "../../kinds";
 
-export class MoveSteps extends Block {
+export class MoveSteps extends BlockKind.Stack {
   constructor(steps: number | Input = 10) {
     super("motion_movesteps");
 

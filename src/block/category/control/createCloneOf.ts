@@ -1,7 +1,7 @@
 import { Input } from "../../input";
-import { Block } from "../..";
+import { BlockKind } from "../../kinds";
 
-export class CreateCloneOf extends Block {
+export class CreateCloneOf extends BlockKind.Stack {
   constructor(cloneOption: Input) {
     super("control_create_clone_of");
 

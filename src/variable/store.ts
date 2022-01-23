@@ -5,6 +5,10 @@ export type SerializedVariableStore = Record<string, [name: string, values: stri
 export class VariableStore {
   private _store: Map<string, Variable> = new Map();
 
+  getVariables() {
+    return this._store;
+  }
+
   findVariableById(id: string): Variable | undefined {
     return this._store.get(id);
   }

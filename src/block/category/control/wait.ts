@@ -1,8 +1,8 @@
 import { NumberInput } from "../../input/number";
 import { Input } from "../../input";
-import { Block } from "../..";
+import { BlockKind } from "../../kinds";
 
-export class Wait extends Block {
+export class Wait extends BlockKind.Stack {
   constructor(duration: Input | number = 1) {
     super("control_wait");
 

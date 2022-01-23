@@ -1,6 +1,6 @@
-import { Block } from "../..";
+import { BlockKind } from "../../kinds";
 
-export class NextBackdrop extends Block {
+export class NextBackdrop extends BlockKind.Stack {
   constructor() {
     super("looks_nextbackdrop");
   }

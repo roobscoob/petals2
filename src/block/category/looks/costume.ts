@@ -1,8 +1,8 @@
 import { Costume as CostumeValue } from "../../../costume";
-import { Block } from "../..";
 import { ValueField } from "../../field/value";
+import { BlockKind } from "../../kinds";
 
-export class Costume extends Block {
+export class Costume extends BlockKind.Reporter {
   constructor(costume: CostumeValue | string) {
     super("looks_costume");
 

@@ -1,8 +1,8 @@
-import { Block } from "../..";
 import { Sprite } from "../../../target/sprite";
 import { ValueField } from "../../field/value";
+import { BlockKind } from "../../kinds";
 
-export class GotoMenu extends Block {
+export class GotoMenu extends BlockKind.Reporter {
   constructor(to: Sprite | string = "_random_") {
     super("motion_goto_menu");
 

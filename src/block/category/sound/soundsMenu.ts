@@ -1,8 +1,8 @@
-import { Block } from "../..";
 import { Sound } from "../../../sound";
 import { ValueField } from "../../field/value";
+import { BlockKind } from "../../kinds";
 
-export class SoundsMenu extends Block {
+export class SoundsMenu extends BlockKind.Reporter {
   constructor(object: Sound | string) {
     super("sound_sounds_menu");
 

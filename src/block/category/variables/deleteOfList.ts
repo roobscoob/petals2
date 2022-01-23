@@ -1,11 +1,10 @@
-import { Block } from "../..";
 import { List } from "../../../list";
 import { ListField } from "../../field/list";
 import { Input } from "../../input";
 import { NumberInput } from "../../input/number";
-import { StringInput } from "../../input/string";
+import { BlockKind } from "../../kinds";
 
-export class DeleteOfList extends Block {
+export class DeleteOfList extends BlockKind.Stack {
   constructor(list: List, index: number | Input) {
     super("data_deleteoflist");
 

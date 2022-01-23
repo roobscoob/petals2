@@ -8,6 +8,7 @@ import { SoundStore } from "../sound/store";
 import type { Sprite } from "./sprite";
 import type { Stage } from "./stage";
 import { Asset } from "../asset";
+import { Optimizer } from "../optimizer";
 
 export abstract class Target {
   private readonly broadcasts: BroadcastStore = new BroadcastStore();
@@ -38,4 +39,8 @@ export abstract class Target {
   getSounds(): SoundStore { return this.sounds }
 
   getAssets(): Asset[] { return [...this.getSounds().getSounds(), ...this.getCostumes().getCostumes()]}
+
+  optimize(optimizer: Optimizer) {
+    this.getBlocks().optimize(optimizer);
+  }
 }

@@ -1,9 +1,9 @@
-import { Block } from "../..";
 import { Sprite } from "../../../target/sprite";
 import { Stage } from "../../../target/stage";
 import { ValueField } from "../../field/value";
+import { BlockKind } from "../../kinds";
 
-export class OfObjectMenu extends Block {
+export class OfObjectMenu extends BlockKind.Reporter {
   constructor(object: Sprite | Stage | string = "_stage_") {
     super("sensing_of_object_menu");
 

@@ -1,8 +1,8 @@
 import { Costume } from "../../../costume";
-import { Block } from "../..";
 import { ValueField } from "../../field/value";
+import { BlockKind } from "../../kinds";
 
-export class Backdrops extends Block {
+export class Backdrops extends BlockKind.Reporter {
   constructor(backdrop: Costume | string) {
     super("looks_backdrops");
 

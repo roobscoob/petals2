@@ -1,7 +1,7 @@
-import { Block } from "../..";
 import { ValueField } from "../../field/value";
+import { BlockKind } from "../../kinds";
 
-export class SetRotationStyle extends Block {
+export class SetRotationStyle extends BlockKind.Stack {
   constructor(style: "left-right" | "all around" | "don't rotate") {
     super("motion_setrotationstyle");
 

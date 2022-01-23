@@ -1,8 +1,8 @@
-import { NumberInput } from "../../input/number";
 import { Input } from "../../input";
 import { Block } from "../..";
+import { BlockKind } from "../../kinds";
 
-export class Forever extends Block {
+export class Forever extends BlockKind.C {
   constructor(substack?: Block) {
     super("control_forever");
 

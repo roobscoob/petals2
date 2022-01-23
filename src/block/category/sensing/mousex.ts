@@ -1,6 +1,6 @@
-import { Block } from "../..";
+import { BlockKind } from "../../kinds";
 
-export class MouseX extends Block {
+export class MouseX extends BlockKind.Reporter {
   constructor() {
     super("sensing_mousex");
   }

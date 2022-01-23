@@ -1,7 +1,7 @@
-import { Block } from "../..";
 import { ValueField } from "../../field/value";
 import { Input } from "../../input";
 import { NumberInput } from "../../input/number";
+import { BlockKind } from "../../kinds";
 
 export enum MathOperation {
   Abs = "abs",
@@ -20,7 +20,7 @@ export enum MathOperation {
   TenPow = "10 ^",
 }
 
-export class MathOp extends Block {
+export class MathOp extends BlockKind.Reporter {
   constructor(operation: MathOperation = MathOperation.Abs, num: number | Input = 0) {
     super("operator_mathop");
 

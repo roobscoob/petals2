@@ -1,8 +1,8 @@
 import { Variable } from "../../../variable";
-import { Block } from "../..";
 import { VariableField } from "../../field/variable";
+import { BlockKind } from "../../kinds";
 
-export class HideVariable extends Block {
+export class HideVariable extends BlockKind.Stack {
   constructor(variable: Variable) {
     super("data_hidevariable");
 

@@ -1,5 +1,7 @@
 import JSZip from "jszip";
+import { Optimizer } from "../optimizer";
 import { SerializedTargetStore, TargetStore } from "../target/store";
+import { OptimizeConfig } from "../types/optimizeConfig";
 import { ProjectMetadata } from "./types";
 
 export type SerializedProject = {
@@ -45,5 +47,11 @@ export class Project {
     }
 
     return zip.generateAsync({ type: "nodebuffer" });
+  }
+
+  optimize(optimizer: Optimizer) {
+    for (const target of this.getTargets().getTargets()) {
+      target.optimize(optimizer);
+    }
   }
 }

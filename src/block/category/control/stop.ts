@@ -1,7 +1,5 @@
-import { NumberInput } from "../../input/number";
 import { ValueField } from "../../field/value";
-import { Input } from "../../input";
-import { Block } from "../..";
+import { BlockKind } from "../../kinds";
 
 export enum StopOption {
   All = "all",
@@ -9,7 +7,7 @@ export enum StopOption {
   OtherScripts = "other scripts in sprite",
 }
 
-export class Stop extends Block {
+export class Stop extends BlockKind.Stack {
   constructor(stopOption: StopOption) {
     super("control_stop");
 

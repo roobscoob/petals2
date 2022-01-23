@@ -1,7 +1,7 @@
-import { Block } from "../..";
 import { Input } from "../../input";
+import { BlockKind } from "../../kinds";
 
-export class Goto extends Block {
+export class Goto extends BlockKind.Stack {
   constructor(to: Input) {
     super("motion_goto");
 
