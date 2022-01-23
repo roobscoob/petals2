@@ -1,6 +1,6 @@
-import { Block } from "../..";
+import { BlockKind } from "../../kinds";
 
-export class Loudness extends Block {
+export class Loudness extends BlockKind.Reporter {
   constructor() {
     super("sensing_loudness");
   }

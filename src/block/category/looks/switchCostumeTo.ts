@@ -1,7 +1,7 @@
-import { Block } from "../..";
 import { Input } from "../../input";
+import { BlockKind } from "../../kinds";
 
-export class SwitchCostumeTo extends Block {
+export class SwitchCostumeTo extends BlockKind.Stack {
   constructor(costume: Input) {
     super("looks_switchcostumeto");
 

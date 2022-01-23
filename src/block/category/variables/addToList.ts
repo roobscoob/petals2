@@ -1,10 +1,10 @@
-import { Block } from "../..";
 import { List } from "../../../list";
 import { ListField } from "../../field/list";
 import { Input } from "../../input";
 import { StringInput } from "../../input/string";
+import { BlockKind } from "../../kinds";
 
-export class AddToList extends Block {
+export class AddToList extends BlockKind.Stack {
   constructor(list: List, item: string | Input) {
     super("data_addtolist");
 

@@ -1,7 +1,7 @@
-import { Block } from "../..";
 import { ValueField } from "../../field/value";
 import { Input } from "../../input";
 import { NumberInput } from "../../input/number";
+import { BlockKind } from "../../kinds";
 
 export enum Effect {
   Color = "COLOR",
@@ -13,7 +13,7 @@ export enum Effect {
   Ghost = "GHOST",
 }
 
-export class ChangeEffectBy extends Block {
+export class ChangeEffectBy extends BlockKind.Stack {
   constructor(effect: Effect = Effect.Color, change: Input | number = 25) {
     super("looks_changeeffectby");
 

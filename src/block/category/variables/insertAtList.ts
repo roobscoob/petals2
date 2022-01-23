@@ -1,11 +1,11 @@
-import { Block } from "../..";
 import { List } from "../../../list";
 import { ListField } from "../../field/list";
 import { Input } from "../../input";
 import { NumberInput } from "../../input/number";
 import { StringInput } from "../../input/string";
+import { BlockKind } from "../../kinds";
 
-export class InsertAtList extends Block {
+export class InsertAtList extends BlockKind.Stack {
   constructor(list: List, index: number | Input, item: string | Input) {
     super("data_insertatlist");
 

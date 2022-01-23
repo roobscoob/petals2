@@ -1,10 +1,10 @@
-import { Block } from "../..";
 import { List } from "../../../list";
 import { ListField } from "../../field/list";
 import { Input } from "../../input";
 import { NumberInput } from "../../input/number";
+import { BlockKind } from "../../kinds";
 
-export class ItemOfList extends Block {
+export class ItemOfList extends BlockKind.Reporter {
   constructor(list: List, item: number | Input) {
     super("data_itemoflist");
 

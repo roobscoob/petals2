@@ -1,5 +1,8 @@
+import fs from "fs";
+import path from "path";
+
 import { Vector2 } from "../types/vector2";
-import { Asset, SerializedAsset } from "../asset";
+import { Asset } from "../asset";
 import { PNG } from "pngjs";
 
 export type SerializedCostume = {
@@ -13,6 +16,11 @@ export type SerializedCostume = {
 
 export class Costume extends Asset {
   protected rotationCenter: Vector2;
+
+  static fromFile(filePath: string, name?: string) {
+    const fileData = fs.readFileSync(filePath);
+    return new Costume(path.basename(filePath), path.extname(filePath).substring(1) as "png"|"svg", fileData, undefined);
+  }
 
   constructor(
     name: string,

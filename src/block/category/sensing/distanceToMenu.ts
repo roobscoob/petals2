@@ -1,9 +1,8 @@
-import { Block } from "../..";
 import { Sprite } from "../../../target/sprite";
-import { Stage } from "../../../target/stage";
 import { ValueField } from "../../field/value";
+import { BlockKind } from "../../kinds";
 
-export class DistanceToMenu extends Block {
+export class DistanceToMenu extends BlockKind.Reporter {
   constructor(object: Sprite | string = "_mouse_") {
     super("sensing_distancetomenu");
 

@@ -1,8 +1,7 @@
-import { Block } from "../..";
 import { Input } from "../../input";
-import { NumberInput } from "../../input/number";
+import { BlockKind } from "../../kinds";
 
-export class PointTowards extends Block {
+export class PointTowards extends BlockKind.Stack {
   constructor(towards: Input) {
     super("motion_pointtowards");
 

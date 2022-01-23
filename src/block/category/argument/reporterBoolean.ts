@@ -1,7 +1,7 @@
-import { Block } from "../..";
 import { ValueField } from "../../field/value";
+import { BlockKind } from "../../kinds";
 
-export class ReporterBoolean extends Block {
+export class ReporterBoolean extends BlockKind.Reporter {
   constructor(name: string) {
     super("argument_reporter_boolean");
 

@@ -1,10 +1,10 @@
-import { Block } from "../..";
 import { Variable } from "../../../variable";
 import { VariableField } from "../../field/variable";
 import { Input } from "../../input";
 import { NumberInput } from "../../input/number";
+import { BlockKind } from "../../kinds";
 
-export class ChangeVariableBy extends Block {
+export class ChangeVariableBy extends BlockKind.Stack {
   constructor(variable: Variable, value: number | Input) {
     super("data_changevariableby");
 

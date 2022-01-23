@@ -4,6 +4,8 @@ import { Procedures } from "./category/procedures";
 import * as esprima from "esprima";
 import { ID } from "../id";
 import { Input } from "./input";
+import { Optimizer } from "../optimizer";
+import { BlockKind } from "./kinds";
 
 export type SerializedBlockStore = Record<string, SerializedBlock>;
 
@@ -212,5 +214,23 @@ export class BlockStore {
 
   getCustomBlockByName(name: string): InstanceType<typeof Procedures.Definition> | undefined {
     return this._customBlockRefs.get(name)?.getParent() as InstanceType<typeof Procedures.Definition> | undefined;
+  }
+
+  * getAllBlockHeads() {
+    for (const block of this._store.values()) {
+      if (block.isHead()) {
+        yield block;
+      }
+    }
+  }
+
+  optimize(optimizer: Optimizer) {
+    for (const block of this.getAllBlockHeads()) {
+      if (optimizer.shouldRemoveFloatingBlocks() && !(block instanceof BlockKind.Hat)) {
+        this.removeStack(block);
+        continue;
+      }
+      block.optimize(this, optimizer);
+    }
   }
 }

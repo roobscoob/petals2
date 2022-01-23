@@ -1,9 +1,7 @@
-import { Block } from "../..";
-import { ValueField } from "../../field/value";
 import { Input } from "../../input";
-import { NumberInput } from "../../input/number";
+import { BlockKind } from "../../kinds";
 
-export class TouchingObject extends Block {
+export class TouchingObject extends BlockKind.Stack {
   constructor(object: Input) {
     super("sensing_touchingobject");
 

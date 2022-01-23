@@ -1,11 +1,11 @@
-import { Block } from "../..";
 import { List } from "../../../list";
 import { ListField } from "../../field/list";
 import { Input } from "../../input";
 import { NumberInput } from "../../input/number";
 import { StringInput } from "../../input/string";
+import { BlockKind } from "../../kinds";
 
-export class ReplaceItemOfList extends Block {
+export class ReplaceItemOfList extends BlockKind.Stack {
   constructor(list: List, index: number | Input, item: string | Input) {
     super("data_replaceitemoflist");
 

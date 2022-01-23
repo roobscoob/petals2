@@ -1,7 +1,7 @@
 import { Input } from "../../input";
-import { Block } from "../..";
+import { BlockKind } from "../../kinds";
 
-export class SwitchBackdropToAndWait extends Block {
+export class SwitchBackdropToAndWait extends BlockKind.Stack {
   constructor(backdrop: Input) {
     super("looks_switchbackdroptoandwait");
 

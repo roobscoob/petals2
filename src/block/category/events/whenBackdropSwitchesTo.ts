@@ -1,8 +1,8 @@
 import { ValueField } from "../../field/value";
 import { Costume } from "../../../costume";
-import { Block } from "../..";
+import { BlockKind } from "../../kinds";
 
-export class WhenBackdropSwitchesTo extends Block {
+export class WhenBackdropSwitchesTo extends BlockKind.Hat {
   constructor(backdrop: string) {
     super("event_whenbackdropswitchesto");
 

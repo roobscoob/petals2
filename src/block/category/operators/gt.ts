@@ -1,8 +1,8 @@
-import { Block } from "../..";
 import { Input } from "../../input";
 import { NumberInput } from "../../input/number";
+import { BlockKind } from "../../kinds";
 
-export class Gt extends Block {
+export class Gt extends BlockKind.Boolean {
   constructor(operand1: number | Input = 0, operand2: number | Input = 0) {
     super("operator_gt");
 

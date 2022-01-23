@@ -1,14 +1,14 @@
 import { ValueField } from "../../field/value";
 import { Input } from "../../input";
-import { Block } from "../..";
 import { NumberInput } from "../../input/number";
+import { BlockKind } from "../../kinds";
 
 export enum WhenGreaterThanMenu {
   Loudness = "LOUDNESS",
   Timer = "TIMER"
 }
 
-export class WhenGreaterThan extends Block {
+export class WhenGreaterThan extends BlockKind.Hat {
   constructor(whenGreaterThanMenu: WhenGreaterThanMenu, value: Input | number = 10) {
     super("event_whengreaterthan");
 

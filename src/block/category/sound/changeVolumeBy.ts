@@ -1,8 +1,8 @@
-import { Block } from "../..";
 import { Input } from "../../input";
 import { NumberInput } from "../../input/number";
+import { BlockKind } from "../../kinds";
 
-export class ChangeVolumeBy extends Block {
+export class ChangeVolumeBy extends BlockKind.Stack {
   constructor(volume: number | Input = -10) {
     super("sound_changevolumeby");
 

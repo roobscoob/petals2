@@ -1,7 +1,7 @@
-import { Block } from "../..";
 import { ValueField } from "../../field/value";
+import { BlockKind } from "../../kinds";
 
-export class GotoFrontBack extends Block {
+export class GotoFrontBack extends BlockKind.Stack {
   constructor(frontBack: "front" | "back") {
     super("looks_gotofrontback");
 

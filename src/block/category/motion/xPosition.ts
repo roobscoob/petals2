@@ -1,6 +1,6 @@
-import { Block } from "../..";
+import { BlockKind } from "../../kinds";
 
-export class XPosition extends Block {
+export class XPosition extends BlockKind.Reporter {
   constructor() {
     super("motion_xposition");
   }

@@ -1,10 +1,12 @@
 import { NumberInput } from "../../input/number";
-import { Input } from "../../input";
+import { AnyInput, Input } from "../../input";
 import { Block } from "../..";
 import { Variable } from "../../../variable";
 import { VariableField } from "../../field/variable";
+import { BlockKind } from "../../kinds";
+import { Optimizer } from "../../../optimizer";
 
-export class ForEach extends Block {
+export class ForEach extends BlockKind.C {
   constructor(variable: Variable, value: Input | number = 10, substack?: Block) {
     super("control_for_each");
 

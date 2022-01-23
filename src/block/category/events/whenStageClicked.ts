@@ -1,6 +1,6 @@
-import { Block } from "../..";
+import { BlockKind } from "../../kinds";
 
-export class WhenStageClicked extends Block {
+export class WhenStageClicked extends BlockKind.Hat {
   constructor() {
     super("event_whenstageclicked");
   }

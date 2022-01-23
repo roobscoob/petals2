@@ -1,6 +1,6 @@
-import { Block } from "../..";
+import { BlockKind } from "../../kinds";
 
-export class Answer extends Block {
+export class Answer extends BlockKind.Reporter {
   constructor() {
     super("sensing_answer");
   }

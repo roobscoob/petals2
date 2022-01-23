@@ -1,8 +1,8 @@
-import { Block } from "../..";
 import { Input } from "../../input";
 import { NumberInput } from "../../input/number";
+import { BlockKind } from "../../kinds";
 
-export class Random extends Block {
+export class Random extends BlockKind.Reporter {
   constructor(from: number | Input = 0, to: number | Input = 0) {
     super("operator_random");
 

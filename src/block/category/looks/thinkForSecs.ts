@@ -1,9 +1,9 @@
 import { NumberInput } from "../../input/number";
 import { StringInput } from "../../input/string";
 import { Input } from "../../input";
-import { Block } from "../..";
+import { BlockKind } from "../../kinds";
 
-export class ThinkForSecs extends Block {
+export class ThinkForSecs extends BlockKind.Stack {
   constructor(message: Input | string = "Hmm...", secs: Input | number = 2) {
     super("looks_thinkforsecs");
 

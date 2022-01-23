@@ -1,8 +1,8 @@
 import { ListField } from "../../field/list";
 import { List } from "../../../list";
-import { Block } from "../..";
+import { BlockKind } from "../../kinds";
 
-export class HideList extends Block {
+export class HideList extends BlockKind.Stack {
   constructor(list: List) {
     super("data_hidelist");
 

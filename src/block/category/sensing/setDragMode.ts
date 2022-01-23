@@ -1,9 +1,7 @@
-import { Block } from "../..";
-import { Sprite } from "../../../target/sprite";
-import { Stage } from "../../../target/stage";
 import { ValueField } from "../../field/value";
+import { BlockKind } from "../../kinds";
 
-export class SetDragMode extends Block {
+export class SetDragMode extends BlockKind.Stack {
   constructor(dragMode: "draggable" | "not draggable") {
     super("sensing_setdragmode");
 

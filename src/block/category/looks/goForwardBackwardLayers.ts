@@ -1,9 +1,9 @@
-import { Block } from "../..";
 import { ValueField } from "../../field/value";
 import { Input } from "../../input";
 import { NumberInput } from "../../input/number";
+import { BlockKind } from "../../kinds";
 
-export class GoForwardBackwardLayers extends Block {
+export class GoForwardBackwardLayers extends BlockKind.Stack {
   constructor(forwardBackward: "forward" | "backward" = "forward", num: Input | number = 1) {
     super("looks_goforwardbackwardlayers");
 

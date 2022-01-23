@@ -21,7 +21,9 @@
   "devDependencies": {
     "@types/esprima": "^4.0.3",
     "@types/jszip": "^3.4.1",
-    "@types/pngjs": "^6.0.1"
+    "@types/pngjs": "^6.0.1",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.5"
   },
   "types": "dist/index.d.ts"
 }

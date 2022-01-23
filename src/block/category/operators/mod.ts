@@ -1,8 +1,8 @@
-import { Block } from "../..";
 import { Input } from "../../input";
 import { NumberInput } from "../../input/number";
+import { BlockKind } from "../../kinds";
 
-export class Mod extends Block {
+export class Mod extends BlockKind.Reporter {
   constructor(num1: number | Input = 0, num2: number | Input = 0) {
     super("operator_mod");
 

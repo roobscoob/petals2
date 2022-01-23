@@ -1,6 +1,6 @@
-import { Block } from "../..";
+import { BlockKind } from "../../kinds";
 
-export class ResetTimer extends Block {
+export class ResetTimer extends BlockKind.Stack {
   constructor() {
     super("sensing_resettimer");
   }

@@ -1,5 +1,6 @@
-import { Block, SerializedBlock } from "../..";
+import { SerializedBlock } from "../..";
 import { Input } from "../../input";
+import { BlockKind } from "../../kinds";
 import { Prototype } from "./prototype";
 
 export type SerializedCall = SerializedBlock & {
@@ -12,7 +13,7 @@ export type SerializedCall = SerializedBlock & {
   }
 }
 
-export class Call extends Block {
+export class Call extends BlockKind.Stack {
   constructor(private readonly prototypeBlock: Prototype, ...args: Input[]) {
     super("procedures_call");
 

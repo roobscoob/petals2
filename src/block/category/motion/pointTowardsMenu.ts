@@ -1,8 +1,8 @@
-import { Block } from "../..";
 import { Sprite } from "../../../target/sprite";
 import { ValueField } from "../../field/value";
+import { BlockKind } from "../../kinds";
 
-export class PointTowardsMenu extends Block {
+export class PointTowardsMenu extends BlockKind.Reporter {
   constructor(towards: Sprite | string = "_mouse_") {
     super("motion_pointtowards_menu");
 

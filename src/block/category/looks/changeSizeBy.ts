@@ -1,8 +1,8 @@
 import { NumberInput } from "../../input/number";
 import { Input } from "../../input";
-import { Block } from "../..";
+import { BlockKind } from "../../kinds";
 
-export class ChangeSizeBy extends Block {
+export class ChangeSizeBy extends BlockKind.Stack {
   constructor(change: Input | number = 10) {
     super("looks_changesizeby");
 

@@ -2,6 +2,7 @@ import { Block, SerializedBlock } from "../..";
 import { Argument } from "../argument";
 import { ID } from "../../../id";
 import { Input } from "../../input";
+import { BlockKind } from "../../kinds";
 
 export type SerialzedPrototype = SerializedBlock & {
   mutation: {
@@ -15,7 +16,7 @@ export type SerialzedPrototype = SerializedBlock & {
   }
 }
 
-export class Prototype extends Block {
+export class Prototype extends BlockKind.Stack {
   protected argIds!: string[];
   protected defaultValues!: (string | boolean)[];
   protected warp: boolean = false;

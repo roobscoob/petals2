@@ -1,8 +1,9 @@
 import { Block } from "../..";
 import { Input } from "../../input";
+import { BlockKind } from "../../kinds";
 import { Prototype } from "./prototype";
 
-export class Definition extends Block {
+export class Definition extends BlockKind.Hat {
   constructor(customBlock: Prototype) {
     super("procedures_definition");
 

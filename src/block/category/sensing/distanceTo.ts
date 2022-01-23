@@ -1,9 +1,7 @@
-import { Block } from "../..";
-import { ValueField } from "../../field/value";
 import { Input } from "../../input";
-import { NumberInput } from "../../input/number";
+import { BlockKind } from "../../kinds";
 
-export class DistanceTo extends Block {
+export class DistanceTo extends BlockKind.Reporter {
   constructor(object: Input) {
     super("sensing_distanceto");
 

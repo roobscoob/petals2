@@ -1,6 +1,6 @@
-import { Block } from "../..";
+import { BlockKind } from "../../kinds";
 
-export class ClearEffects extends Block {
+export class ClearEffects extends BlockKind.Stack {
   constructor() {
     super("sound_cleareffects");
   }

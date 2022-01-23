@@ -1,8 +1,8 @@
-import { Block } from "../..";
 import { Input } from "../../input";
 import { StringInput } from "../../input/string";
+import { BlockKind } from "../../kinds";
 
-export class AskAndWait extends Block {
+export class AskAndWait extends BlockKind.Stack {
   constructor(question: string | Input = "apple") {
     super("sensing_askandwait");
 
