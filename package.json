@@ -1,0 +1,27 @@
+{
+  "name": "petals2",
+  "version": "1.0.4",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "tsc -p ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bconvert": "^1.0.0",
+    "esprima": "^4.0.1",
+    "file-type": "16.5.3",
+    "jszip": "^3.7.1",
+    "mp3-parser": "^0.3.0",
+    "pngjs": "^6.0.0",
+    "wavefile-parser": "^1.0.1"
+  },
+  "devDependencies": {
+    "@types/esprima": "^4.0.3",
+    "@types/jszip": "^3.4.1",
+    "@types/pngjs": "^6.0.1"
+  },
+  "types": "dist/index.d.ts"
+}
