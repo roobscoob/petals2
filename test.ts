@@ -2,7 +2,7 @@ import fs from "fs/promises";
 import util from "util";
 import path from "path";
 
-import { Project } from ".";
+import { Project } from "./src/project";
 import { Events } from "./src/block/category/events";
 import { Looks } from "./src/block/category/looks";
 import { Operators } from "./src/block/category/operators";

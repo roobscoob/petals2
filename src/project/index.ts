@@ -20,7 +20,7 @@ export class Project {
     vm: string = "0.2.0-prerelease.20210131100123",
     semver: string = "3.0.0",
   ) {
-    this.metadata = { agent, vm, semver }
+    this.metadata = { agent, vm, semver, petalsVersion: "Test!" }
   }
 
   getMetadata(): ProjectMetadata { return this.metadata }
